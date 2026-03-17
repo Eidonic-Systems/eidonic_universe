@@ -104,7 +104,7 @@ A single MycoForge deployment is a **microfactory swarm** built from the followi
 - **Assemble (AS)** — robotic placement, closure, and protected field construction
 - **Join Habitat (JH)** — sealed local enclosure for all Band 1 structural joins
 
-### System Architecture (GitHub-safe Mermaid)
+### System Architecture
 
 ```mermaid
 flowchart TD
