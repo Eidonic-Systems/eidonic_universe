@@ -130,6 +130,7 @@ flowchart TD
 
 &#x20;   Render -->|"Haptic + Visual Feedback"| Veil\[Thought Veil Confirmation]
 
+
 ```
 
 
