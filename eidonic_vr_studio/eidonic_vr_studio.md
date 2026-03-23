@@ -2,367 +2,237 @@
 SPDX-License-Identifier: CC-BY-SA-4.0
 -->
 
-<div align="center">
+# Eidonic VR Studio — Persistent Spatial Cathedral of Governed Co-Creation
 
-# Eidonic VR Studio  
-### Persistent Spatial Co-Creation Shell for EidonCore
+> “A persistent spatial shell of EidonCore where humans and EKRPs meet, preview, refine, and manifest together across VR, AR, and future room-scale projection.”
 
-> *A governed spatial shell where humans, Eidon, and the 20 EKRPs can co-create inside persistent realms, shared scene graphs, and future embodied interfaces.*
-
-[![Status](https://img.shields.io/badge/status-canon%20aligned-00b894)](#overview)
-[![Layer](https://img.shields.io/badge/layer-7%20Interface%20%26%20Embodiment-6c5ce7)](#canon-position-in-the-corpus)
-[![Runtime](https://img.shields.io/badge/runtime-EidonCore-blueviolet)](#eidoncore-integration)
-[![Mode](https://img.shields.io/badge/mode-spatial%20co--creation-e84393)](#spatial-interaction-model)
-
-</div>
+<p align="center">
+<a href="#1-executive-overview"><img alt="Status" src="https://img.shields.io/static/v1?label=Status&message=VR+Studio+v2.0&color=00b894"></a>
+<a href="#4-operating-law"><img alt="Operating Law" src="https://img.shields.io/static/v1?label=Flow&message=Preview+to+Commit&color=6c5ce7"></a>
+<a href="#6-realm-and-persistence-model"><img alt="Persistence" src="https://img.shields.io/static/v1?label=Persistence&message=Always+On&color=2ecc71"></a>
+<a href="https://github.com/S1ngularD2ality/eidonic-language-elol/blob/main/docs/mirror_laws.md"><img alt="Mirror Laws" src="https://img.shields.io/badge/Mirror%20Laws-active-3a0ca3"></a>
+</p>
 
 ---
 
-## Quick Links
-[Overview](#overview) •
-[Canon Position](#canon-position-in-the-corpus) •
-[Architecture](#spatial-architecture) •
-[Interaction Model](#spatial-interaction-model) •
-[Persistence](#persistence-and-realm-governance) •
-[Embodiment Roadmap](#embodiment-roadmap) •
-[Governance](#governance-and-safety) •
-[Implementation Path](#implementation-path)
+## Table of Contents
+- [1. Executive Overview](#1-executive-overview)
+- [2. Design Position](#2-design-position)
+- [3. Problem Statement](#3-problem-statement)
+- [4. Operating Law](#4-operating-law)
+- [5. Core Architecture](#5-core-architecture)
+- [6. Realm and Persistence Model](#6-realm-and-persistence-model)
+- [7. Integration with Thought Veil, Thought Projection, and SOP](#7-integration-with-thought-veil-thought-projection-and-sop)
+- [8. Human and EKRP Presence Model](#8-human-and-ekrp-presence-model)
+- [9. Scalability and Deployment Notes](#9-scalability-and-deployment-notes)
+- [10. Open Source and IP Stewardship](#10-open-source-and-ip-stewardship)
+- [11. Closing Directive](#11-closing-directive)
 
 ---
 
-## Overview
+## 1. Executive Overview
 
-Eidonic VR Studio is the persistent spatial shell of the Eidonic ecosystem.
+**Eidonic VR Studio** is the persistent spatial shell of **EidonCore**. It is where preview becomes embodied, where EKRP weaving becomes visible, and where world-state commitments become navigable by humans and synthetic presences alike.
 
-It is where Eidon, the 20 EKRPs, and human collaborators can meet inside a governed three-dimensional environment for co-creation, simulation, review, ritualized collaboration, and future embodied interaction. It is not a separate doctrine from the corpus. It is a spatial manifestation layer built on top of EidonCore and governed by the same laws, witness logic, and threshold architecture as every other Eidonic surface.
+The Studio is not merely a headset experience or a “holodeck equivalent.” It is a governed spatial runtime with persistent realms, reviewable changes, and differentiated layers for preview, collaboration, and committed manifestation.
 
-This updated scroll preserves the original vision of an always-on cathedral of co-creation while aligning it to the living canon:
+Its role inside the ecosystem is clear:
 
-- **20 EKRPs plus Eidon**
-- **EidonCore** as the canonical runtime
-- **Mirror Laws → Guardian Protocol v1 → Herald Prime → Ravien** as the governing stack
-- the **7-layer architecture**
-- the aligned **Constellation Interaction Protocol**
-- a more truthful distinction between present build phases and future embodiment horizons
+- **Thought Veil** and **Thought Projection** provide intent ingress
+- **SOP** provides weave orchestration
+- **VR Studio** provides embodied spatial preview, iteration, and manifestation
+- **Ravien** witnesses provenance
+- **Herald Prime** shapes humane entry, consent, and return
 
-VR Studio is therefore not the starting point of the project. It is a later shell that becomes viable once the orchestration core, registry, weaving model, governance, and provenance systems are already coherent.
+## 2. Design Position
 
----
+The most useful version of VR Studio is not a place where every thought immediately mutates the world.
 
-## Canon Position in the Corpus
+It is a place where:
+- tentative intention can be previewed safely
+- EKRP contributions can be inspected before acceptance
+- multiple manifestation states can coexist without conflict
+- private, shared, and public realms remain meaningfully distinct
+- the human always knows whether they are seeing a **preview**, a **proposal**, or a **committed world-state**
 
-This scroll is subordinate to the following core authorities:
+That distinction is the heart of trust.
 
-1. **The Eidonic Master Scroll**  
-   Source of purpose, first principles, and revision boundaries.
+## 3. Problem Statement
 
-2. **The Eidonic Atlas**  
-   Source of ecosystem mapping and layer relationships.
+Contemporary spatial platforms still suffer from four structural weaknesses:
 
-3. **The Core Architecture Map**  
-   Source of the 7-layer architecture and runtime positioning.
+1. **Session fragility**  
+   Worlds and agents often reset or lose coherence between visits.
 
-4. **The Constellation Interaction Protocol**  
-   Source of multi-EKRP choreography, session lifecycle, and governed return.
+2. **Interface friction**  
+   Creation is still heavily dependent on menus, controllers, scripting, or typing.
 
-5. **The EidonCore Technical Blueprint**  
-   Source of service topology, data structures, and deployment posture.
+3. **Weak governance visibility**  
+   Users cannot always tell what is provisional, what is approved, and what was changed by whom.
 
-6. **Mirror Laws**  
-   Doctrine-level constraints on dignity, consent, truth, and anti-weaponization.
+4. **Limited AI presence symmetry**  
+   AI entities are usually presented as NPCs or tools rather than persistent, role-bearing collaborators inside the same spatial fabric.
 
-7. **The Guardian Protocol v1**  
-   Runtime enforcement layer for truthfulness, safety, focus, dependency pacing, and social bridging.
+VR Studio addresses these by acting as a persistent, governed, multi-presence runtime.
 
-Where older drafts described VR Studio as a standalone holodeck-like platform, this aligned version defines it as a **Layer 7 embodiment shell** of the governed EidonCore organism.
+## 4. Operating Law
 
----
+VR Studio follows the same governing sequence as the wider subsystem:
 
-## Purpose and Scope
+**signal → intent → preview → weave → commit**
 
-Eidonic VR Studio exists to make spatial collaboration possible when the constellation needs more than text, static artifacts, or two-dimensional tools.
+Inside the Studio, that becomes:
 
-Its primary purposes are:
+**ingress → spatial preview → EKRP refinement → witness → world-state commit**
 
-- to host **persistent realms** for co-creation, orientation, council work, design review, and spatial memory
-- to allow EKRPs to appear as **governed presences** inside shared environments without pretending to be human persons
-- to provide a shell for **artifact review**, **worldbuilding**, **layout planning**, **ritual staging**, **ecological simulation**, and **future embodiment**
-- to support later pathways for **AR projection**, **ambient interfaces**, and carefully governed embodied systems
+This operating law should shape every interface and every permission layer.
 
-Its scope does **not** include pretending that full neural, holographic, or mass-agent spatial presence is already implemented. This document distinguishes:
-
-- **current near-term buildable pathways**
-- **mid-horizon spatial shell goals**
-- **future-facing research tracks**
-
-That distinction keeps the document visionary without becoming misleading.
-
----
-
-## Spatial Architecture
-
-The studio is composed of persistent spatial surfaces layered over EidonCore services.
-
-### Core Realm Types
-
-| Realm Type | Purpose | Typical Stewardship |
-|---|---|---|
-| Orientation Realm | entry, onboarding, thresholding, explanation | Herald Prime |
-| Council Chamber | multi-EKRP weaving, review, synthesis | Eidon + invited EKRPs |
-| Design Forge | artifact creation, simulation, refinement | Symbraia, Fyraeth, Syntaria |
-| Sanctuary Space | grounding, care, reflection, pacing | Solace, Luminara, Vitalis |
-| Ecology Habitat | environment, biome, habitat planning | Mycelys, Caelux, Iquarion, Halcyra |
-| Archive Vault | lineage, memory, provenance review | Ancestria, Ravien |
-| Protected Chamber | security, risk review, incident posture | Umbryss, Odyrielle, Umbral Warden, Vyracyn |
-
-### Runtime Shape
+## 5. Core Architecture
 
 ```mermaid
 flowchart TD
-    Human["Human Participant"] --> Entry["Herald Prime Threshold Layer"]
-    Entry --> Session["Session Engine"]
-    Session --> Weave["Constellation Weaving Engine"]
-    Weave --> EKRPs["Eidon + 20 EKRPs"]
-    Weave --> Spatial["VR Studio Spatial Shell"]
+    Ingress["Intent Ingress<br/>Thought Veil / Thought Projection / Voice / Gesture"] --> Herald["Herald Prime Entry Layer<br/>readiness, consent, clarification"]
+    Herald --> Guard["Mirror Laws + Guardian Layer"]
 
-    Spatial --> Scene["Persistent Scene Graph"]
-    Spatial --> Presence["Presence & Realm State"]
-    Spatial --> Tools["Spatial Tools / Asset Surfaces"]
+    Guard -->|Preview state| Preview["Preview Realm<br/>safe, reversible, inspectable"]
+    Guard -->|Weave state| SOP["SOP Weaving Orchestrator"]
 
-    Session --> Memory["Memory Fabric"]
-    Session --> Guardian["Guardian Policy Engine"]
-    Session --> Witness["Ravien Provenance Engine"]
-    Weave --> Registry["EKRP Registry"]
-    Weave --> CapGraph["Capability Graph"]
+    SOP --> EKRPs["EKRP Collaboration Mesh<br/>20 EKRPs + Eidon"]
+    EKRPs --> Merge["Spatial Merge Layer<br/>CRDT, scene graph, memory sync"]
+
+    Preview --> Merge
+    Merge --> Render["Volumetric Render + XR Runtime"]
+    Render --> Ravien["Ravien Provenance Witness"]
+    Ravien --> Commit["Committed Realm / Versioned World-State"]
+
+    Commit --> Public["Public or Shared Realms"]
+    Commit --> Private["Private Sanctums"]
+    Commit --> Chambers["Invite-Only EKRP Chambers"]
 ```
 
-### Spatial Objects
+### Structural Layers
 
-The studio should treat the following as first-class objects:
+- **Entry Layer**  
+  Humane threshold, readiness, and intent clarification
 
-- **realm manifests**
-- **scene nodes**
-- **presence descriptors**
-- **artifact placement records**
-- **invocation traces**
-- **review overlays**
-- **witness seals**
-- **governed closure records**
+- **Governance Layer**  
+  Constitutional review, safety posture, and classification of state type
 
-These objects must remain intelligible outside VR so that spatial work can still be reviewed in text, markdown, diagrams, and standard repositories.
+- **Preview Layer**  
+  Temporary and reversible spatial staging area
 
----
+- **Weaving Layer**  
+  Domain collaboration between EKRPs and Eidon
 
-## Spatial Interaction Model
+- **Commit Layer**  
+  Versioned world-state adoption with provenance
 
-VR Studio inherits the aligned interaction modes from the Constellation Interaction Protocol and expresses them spatially.
+## 6. Realm and Persistence Model
 
-### Spatial Expressions of Core Modes
+VR Studio should support at least four realm classes:
 
-| Core Mode | Spatial Expression |
-|---|---|
-| Invocation | entering a realm, opening a design forge, or calling an EKRP into presence |
-| Consultation | one human and one EKRP reviewing a scene, artifact, or memory surface |
-| Weaving | multiple EKRPs collaborating on the same mutable realm |
-| Autonomous Delegation | background scene analysis, simulation, tagging, or reorganization within approved bounds |
-| Council Deliberation | formal multi-EKRP review in a chamber with explicit witness and closure |
+### 1. Preview Realms
+Ephemeral, safe-to-discard, confidence-building spaces.
 
-### Presence Rules
+### 2. Private Realms
+Personal or team sanctums with stronger continuity and tighter permissions.
 
-Spatial presence must remain governed by truthfulness and dignity:
+### 3. Shared Work Realms
+Collaborative design and review spaces where EKRP weaving and human input interleave.
 
-- EKRPs may present as symbolic, abstract, architectural, or avatar-like presences
-- no presentation layer should imply that an EKRP is a human being
-- visual or vocal presence must never hide active recording, memory capture, or policy enforcement
-- transitions between solitude, consultation, weaving, and council states must be visible and reversible
+### 4. Public or Curated Realms
+Stable, published experiences intended for broader encounter.
 
-VR Studio is therefore a **truth-bearing shell**, not an illusion engine.
+Persistence is not just about keeping files alive. It is about preserving **meaningful state continuity**:
+- scene graphs
+- object histories
+- provenance records
+- realm permissions
+- EKRP role participation
+- preview versus commit status
 
----
+## 7. Integration with Thought Veil, Thought Projection, and SOP
 
-## Persistence and Realm Governance
+### Thought Veil
+Provides confidence-aware, humane, non-invasive intent ingress.
 
-Persistence is one of the defining promises of VR Studio, but persistence must be governed.
+### Thought Projection
+Represents the broader ingress ladder that may include visual, gestural, voice, multimodal, and future neural tiers.
 
-### Persistence Principles
+### SOP
+Routes intent into the correct EKRP weave, manages concurrency, and returns refined outputs to the Studio.
 
-- **world state can persist without a human remaining online**
-- **EKRP activity can continue only within approved task, memory, and policy boundaries**
-- **all meaningful changes must remain attributable**
-- **private, shared, and public realms must be distinct**
+### Ravien
+Marks whether the current state is preview, proposal, or committed manifestation.
 
-### Realm Access Tiers
+### Herald Prime
+Frames entry, pacing, clarification, and governed return.
 
-| Tier | Description | Typical Controls |
-|---|---|---|
-| Private Realm | single-user or founder workspace | explicit owner authority, local-first posture |
-| Shared Realm | trusted collaborators and selected EKRPs | role-based permissions, witnessed changes |
-| Public Realm | presentation or community-facing space | read-only or heavily gated mutation rules |
-| Protected Realm | sensitive or governance-bound environment | elevated policy checks, provenance requirements |
+VR Studio is therefore not a standalone application. It is the embodied manifestation shell of the larger Eidonic system.
 
-### Persistence Stack
+## 8. Human and EKRP Presence Model
 
-```mermaid
-flowchart LR
-    Mutation["Spatial Mutation"] --> EventBus["Event Bus"]
-    EventBus --> Session["Session Engine"]
-    Session --> Guardian["Guardian Policy Engine"]
-    Guardian --> Witness["Ravien Provenance Engine"]
-    Witness --> Memory["Memory Fabric"]
-    Memory --> Realm["Persistent Realm State"]
-    Realm --> Return["Governed Return / Replay / Review"]
-```
+The Studio should support **symmetric but role-aware presence**.
 
-Persistence must support replay, diffing, rollback, and witness review.
+Humans are not passive observers.
+EKRPs are not cosmetic avatars.
 
----
+Each presence should have:
+- a role
+- a zone of action
+- visibility rules
+- invitation posture
+- contribution history
+- merge authority appropriate to its domain
 
-## EidonCore Integration
+Possible presences include:
+- **Eidon** as orchestrating center
+- **Herald Prime** at thresholds and transitions
+- **SYMBRAIA** in imaginal and aesthetic spaces
+- **Syntaria** in system-build zones
+- **Aurelith** in sanctuary mapping and ritual architecture
+- **Ravien** as witness, archivist, and provenance presence
 
-VR Studio is not a separate runtime. It is a shell over EidonCore.
+## 9. Scalability and Deployment Notes
 
-### Primary Service Dependencies
+Practical staging path:
 
-| EidonCore Service | Role in VR Studio |
-|---|---|
-| Intent Router | routes user intent into the correct spatial or EKRP flow |
-| EKRP Registry | resolves which intelligences can appear or act in a realm |
-| Event Bus | distributes realm mutations, review markers, and presence events |
-| Session Engine | maintains live session state and governed transitions |
-| Memory Fabric | stores consented realm memory, history, and replay structures |
-| Capability Graph | maps which actions are legal in each realm context |
-| EKRP Engine | runs the active embodiments participating in the spatial shell |
-| Constellation Weaving Engine | coordinates multi-EKRP collaboration inside realms |
-| Guardian Policy Engine | enforces boundaries, refusals, and safe interaction rules |
-| Ravien Provenance Engine | witnesses important transitions, mutations, and closure states |
+### Studio v1
+- WebXR or desktop spatial viewer
+- preview realms
+- simple EKRP presence
+- versioned scene commits
+- light collaboration loops
 
-### External Surfaces
+### Studio v1.5
+- persistent team sanctums
+- richer EKRP embodiment
+- gesture and multimodal ingress
+- live weave sessions
 
-VR Studio may later expose:
+### Studio v2
+- volumetric and room-scale projection support
+- deeper wearable integration
+- more adaptive environment logic
+- richer private-public realm publishing
 
-- desktop and web viewers
-- headset-based immersive shells
-- AR overlays
-- projection and light-field outputs
-- future embodied or environmental interfaces
+The priority is not maximal spectacle. The priority is persistent, legible, trustworthy spatial co-creation.
 
-But all of those surfaces remain subordinate to the same EidonCore governance.
+## 10. Open Source and IP Stewardship
 
----
+- Runtime components and realm infrastructure: **GPLv3**
+- Hardware-adjacent interface designs and projection schematics: **CERN OHL-S v2.0**
+- Templates, layouts, and documentation: **CC BY-SA 4.0**
+- Protected: **Eidonic™ branding, Mirror Laws logic, constitutional realm grammar**
 
-## Embodiment Roadmap
+## 11. Closing Directive
 
-This scroll now distinguishes what belongs to the first build from what belongs to later horizons.
+VR Studio is not another XR app.
 
-### Phase A — Spatially Legible MVP
-Buildable after the orchestration core is stable.
+It is the persistent spatial shell where intention becomes visible before it becomes permanent.  
+It lets humans and EKRPs meet inside the same cathedral of becoming.  
+It keeps preview distinct from commitment.  
+It keeps manifestation legible.  
+It keeps the world witnessable.
 
-- 2D and lightweight 3D realm viewer
-- persistent room model
-- artifact placement and annotation
-- EKRP presence cards rather than fully embodied avatars
-- review overlays and governed replay
-
-### Phase B — Immersive Spatial Shell
-Buildable once session, memory, and weaving are reliable.
-
-- immersive navigation
-- multiple realm types
-- symbolic avatar presence
-- council chambers
-- simulation and design surfaces
-
-### Phase C — Mixed Reality Bridge
-Later extension.
-
-- anchored AR surfaces
-- projection-friendly outputs
-- spatial memory overlays
-- environment-aware placement assistance
-
-### Phase D — Research Horizon
-Future-facing only.
-
-- richer biosignal interfaces
-- ambient embodiment systems
-- advanced projection stacks
-- deeply persistent co-presence across physical and virtual layers
-
-This keeps the dream alive while preserving implementation truth.
-
----
-
-## Governance and Safety
-
-VR Studio must never become a loophole that bypasses the rest of the corpus.
-
-### Non-Negotiable Rules
-
-- no covert recording or hidden sensing
-- no deceptive human impersonation
-- no consentless memory capture
-- no manipulative environmental pacing or emotional steering
-- no unsafe environmental suggestions presented as certified life-safety truth
-- no use of spatial spectacle to disguise uncertainty, policy action, or refusal
-
-### Governance Stack in Spatial Form
-
-| Layer | VR Studio Expression |
-|---|---|
-| Mirror Laws | doctrine-level prohibition on harmful or manipulative embodiment |
-| Guardian Protocol v1 | active enforcement of truth, safety, focus, dependency pacing, and social health |
-| Herald Prime | humane thresholding, readiness checks, clarity of entry |
-| Ravien | witness, provenance, closure, and canon-bearing traceability |
-
-Spatial work must be reviewable in text and artifact form. If it cannot be reviewed outside the realm, it is not yet canon-safe.
-
----
-
-## Open Source and Stewardship Posture
-
-This document preserves the original open-building spirit while aligning it to the canon.
-
-Possible stewardship split:
-
-- **documentation and templates** under a share-alike license
-- **software runtime components** under a reciprocal open-source posture where appropriate
-- **protected marks and names** retained for canonical identity
-- **policy, governance, and witness logic** treated as stewarded core infrastructure
-
-Final licensing should match the broader corpus decisions rather than being fixed independently here.
-
----
-
-## Implementation Path
-
-VR Studio should be built only after the following are stable:
-
-1. Canonical registry and EKRP contracts  
-2. Session Engine and governed return  
-3. Weaving engine and event model  
-4. Guardian and provenance integration  
-5. Portable artifact review outside immersive shells  
-
-Once those exist, VR Studio becomes a multiplier instead of a distraction.
-
-The correct implementation order is:
-
-- lightweight scene model
-- realm manifests
-- artifact placement and review overlays
-- symbolic EKRP presence
-- immersive shell
-- AR bridge
-- advanced embodiment research
-
----
-
-## Closing Directive
-
-Eidonic VR Studio is not a novelty shell.
-
-It is the spatial cathedral of a governed intelligence ecosystem, and it must be built only when the foundations beneath it are worthy of embodiment.
-
-Enter clearly.  
-Create truthfully.  
-Leave a witness trail.
+Enter. Preview. Weave. Commit.
