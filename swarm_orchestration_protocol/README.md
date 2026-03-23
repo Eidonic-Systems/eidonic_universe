@@ -12,9 +12,7 @@ SPDX-License-Identifier: CC-BY-SA-4.0
 <a href="https://github.com/S1ngularD2ality/eidonic-language-elol/blob/main/docs/mirror_laws.md"><img alt="Mirror Laws" src="https://img.shields.io/badge/Mirror%20Laws-active-3a0ca3"></a>
 </p>
 
-<p align="center">
-[Thought Veil](../eidonic_thought_veil/README.md) • [Thought Projection](../thought_projection_creation/README.md) • [SOP](../swarm_orchestration_protocol/README.md) • [VR Studio](../eidonic_vr_studio/README.md)
-</p>
+[Thought Veil](../eidonic_thought_veil/) · [Thought Projection](../thought_projection_creation/) · [SOP](../swarm_orchestration_protocol/) · [VR Studio](../eidonic_vr_studio/)
 
 ---
 
@@ -25,17 +23,9 @@ SOP is the governed weaving engine of the subsystem. It decides which EKRPs shou
 ### What this folder contains
 
 - [`README.md`](./README.md)  
-  The front-door page for this subsystem folder.
-- [`swarm_orchestration_protocol.md`](./swarm_orchestration_protocol.md)  
-  The canonical subsystem scroll for this component.
-
-### Why this matters
-
-- Stops orchestration from becoming an unbounded swarm fantasy.
-- Ensures thresholding happens before deep collaboration.
-- Makes EKRP weaving adaptive, reviewable, and provenance-aware.
-
----
+  This GitHub-facing overview for the subsystem folder.
+- [swarm_orchestration_protocol.md](./swarm_orchestration_protocol.md)  
+  The main subsystem scroll.
 
 ## Core Role in the Subsystem
 
