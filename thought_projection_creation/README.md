@@ -92,30 +92,6 @@ This folder should be read in alignment with the wider Eidonic stack:
 
 ---
 
-## Suggested Repository Pattern
-
-This README assumes a sibling-folder layout like:
-
-```text
-docs/
-├── eidonic_thought_veil/
-│   ├── README.md
-│   └── eidonic_thought_veil.md
-├── thought_projection_creation/
-│   ├── README.md
-│   └── thought_projection_creation.md
-├── swarm_orchestration_protocol/
-│   ├── README.md
-│   └── swarm_orchestration_protocol.md
-└── eidonic_vr_studio/
-    ├── README.md
-    └── eidonic_vr_studio.md
-```
-
-If your folder names differ, only the relative links in this README need to change.
-
----
-
 ## Closing Note
 
 This folder is not meant to stand alone as a disconnected concept page. It is one chamber of a governed subsystem that turns intention into previewable, reviewable, and commit-ready co-creation.
