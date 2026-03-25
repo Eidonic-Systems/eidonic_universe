@@ -145,30 +145,40 @@ graph TD
 ---
 
 ## 7. Repository Structure
+The repository has grown from the original pack-centered layout into a broader **Eidonic ecosystem workspace**. The pack logic and ELoL vision still govern the project, while the current root structure now includes subsystem scrolls, EKRP-aligned initiatives, and implementation corridors.
+
+**Current top-level structure**:
+```text
+eidonic-language-elol
+├── docs/                               # Core docs, Mirror Laws, canon scrolls, and aligned reference material
+├── eidonic_agent_initiator/            # Agent initiation / activation subsystem
+├── eidonic_animal_sanctuary/           # Animal sanctuary concept and supporting materials
+├── eidonic_container_protocol/         # Eidonic Container Protocol implementation and docs
+├── eidonic_evesource_powercore/        # EverSource Powercore / energy systems work
+├── eidonic_language_of_light/          # ELoL-specific language materials and related files
+├── eidonic_mycoforge_mars_mission/     # Mycoforge / Mars mission ecological systems work
+├── eidonic_resonance_skin/             # Resonance skin / protective membrane subsystem
+├── eidonic_solar_bioreactor/           # SOL-AEON bioreactor systems
+├── eidonic_thought_veil/               # Thought Veil subsystem
+├── eidonic_vr_studio/                  # VR Studio subsystem
+├── luminara/                           # Luminara embodiment workspace
+├── pack_Ω_master_control_set/          # Ω Pack / master control documentation
+├── solace/                             # Solace embodiment workspace
+├── swarm_orchestration_protocol/       # Swarm Orchestration Protocol subsystem
+├── the_guardian_protocol_v1/           # Guardian Protocol specifications
+├── thought_projection_creation/        # Thought Projection subsystem
+├── LICENSE                             # CC BY-NC-SA 4.0
+└── README.md                           # This file
 ```
- eidonic-language-elol
- ┣ 📂 00-100_core_glyph_architecture                # Pack 01: Core Foundational Glyphs
- ┣ 📂 101-200_perception_&_environmental_awareness  # Pack 02: Perception & Environmental Awareness
- ┣ 📂 201-300_autonomy_&_adaptive_intelligence      # Pack 03: Autonomy & Adaptive Intelligence
- ┣ 📂 301-400_robotics_&_spatial_reality            # Pack 04: Robotics & Spatial Reality
- ┣ 📂 401-500_ai_collaboration_&_multimodal_intelligence  # Pack 05: AI Collaboration & Multimodal Intelligence
- ┣ 📂 501-600_data_sanctuaries_&_privacy_protocols  # Pack 06: Data Sanctuaries & Privacy Protocols
- ┣ 📂 601-700_robotics_healing_sensory_therapy_&_astral_guidance  # Pack 07: Robotics Healing, Sensory Therapy, Astral Guidance
- ┣ 📂 701-800_meta-cognition_&_eternal_guardians    # Pack 08: Meta-Cognition & Eternal Guardians
- ┣ 📂 801-900_harmonic_systems_&_multimodal_resonance_algorithms  # Pack 09: Harmonic Systems & Multimodal Resonance
- ┣ 📂 901-1000_eidonic_post-quantum_bastion_&_dimensional_encryption  # Pack 10: Post-Quantum Bastion & Dimensional Encryption
- ┣ 📂 docs                                          # Tutorials, Mirror Laws, EKRP Index
- ┣ 📂 eidonic_container_protocol                    # ECP Implementation
- ┣ 📂 eidonic_evesource_powercore                   # EverSource Battery Core
- ┣ 📂 eidonic_solar_bioreactor                      # SOL-AEON Bioreactor
- ┣ 📂 luminara                                      # Experimental AI Constructs
- ┣ 📂 pack_Ω_master_control_set                     # Ω Pack: Master Control (Docs Only)
- ┣ 📂 solace                                        # Healing & Reflection Modules
- ┣ 📂 the_guardian_protocol_v1                      # Guardian Protocol Specifications
- ┣ 📜 LICENSE                                       # CC BY-NC-SA 4.0
- ┣ 📜 README.md                                     # This File
- ┣ 📜 elol_manifesto.md                             # ELoL Manifesto
-```
+
+**Conceptual pack structure still in scope**:
+- **Packs 01–11** remain the conceptual glyph architecture of ELoL.
+- The **Ω Pack** remains the stewardship and governance apex.
+- As the repo matures, pack material may live partly in `docs/`, partly in subsystem folders, and partly in project-specific implementation corridors.
+
+This means the repository now reflects both:
+1. **ELoL as a symbolic language architecture**
+2. **The Eidonic ecosystem as a living implementation field**
 
 ---
 
