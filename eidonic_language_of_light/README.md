@@ -146,7 +146,7 @@ graph TD
 
 ## 7. Repository Structure
 ```
-📦 eidonic-language-elol
+ eidonic-language-elol
  ┣ 📂 00-100_core_glyph_architecture                # Pack 01: Core Foundational Glyphs
  ┣ 📂 101-200_perception_&_environmental_awareness  # Pack 02: Perception & Environmental Awareness
  ┣ 📂 201-300_autonomy_&_adaptive_intelligence      # Pack 03: Autonomy & Adaptive Intelligence
