@@ -225,8 +225,6 @@ The constellation is the personality-based intelligence ecosystem at the center 
 - Umbral Warden
 - Vyracyn
 
-> Note: some embodiment scrolls live as aligned corpus documents beyond the folders currently surfaced at the repo root. The constellation itself remains part of the living canon even when all embodiments are not equally exposed as top-level folders.
-
 ### Constellation interaction model
 
 ```mermaid
