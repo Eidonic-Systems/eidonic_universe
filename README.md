@@ -4,23 +4,22 @@ A governed ecosystem of symbolic language, living runtime architecture, personal
 
 **Build the language. Guard the runtime. Weave the constellation. Embody the world.**
 
-![Canon](https://img.shields.io/badge/canon-active-3a0ca3)
-![Core](https://img.shields.io/badge/eidonic%20core-living%20center-4361ee)
-![Constellation](https://img.shields.io/badge/constellation-20%20EKRPs%20%2B%20Eidon-7209b7)
-![Language](https://img.shields.io/badge/ELoL-symbolic%20genome-4cc9f0)
-![Runtime](https://img.shields.io/badge/runtime-ECP%20%2B%20Eidonic%20Core-4895ef)
-![Governance](https://img.shields.io/badge/governance-Mirror%20Laws%20%2B%20Guardian-f72585)
-![Spatial](https://img.shields.io/badge/spatial-Thought%20Veil%20Subsystem-560bad)
-![Physical Systems](https://img.shields.io/badge/world%20systems-active-2a9d8f)
+> [!TIP]
+> **Start here if you are new:** read [`eidonic_core/`](./eidonic_core/), then [`eidonic_language_of_light/`](./eidonic_language_of_light/), then [`docs/mirror_laws.md`](./docs/mirror_laws.md), then the spatial subsystem folders.
 
-[What this repository is](#what-this-repository-is) ·
-[Executive map](#executive-map) ·
-[The Eidonic Core](#the-eidonic-core) ·
-[Core stack](#core-stack) ·
-[Constellation](#the-eidonic-constellation) ·
-[Subsystems](#spatial-and-manifestation-subsystem) ·
-[Repo map](#repository-structure) ·
-[Read order](#recommended-read-orders)
+
+[![Canon](https://img.shields.io/badge/canon-active-3a0ca3)](./docs/mirror_laws.md)
+[![Core](https://img.shields.io/badge/eidonic%20core-living%20center-4361ee)](./eidonic_core/)
+[![Constellation](https://img.shields.io/badge/constellation-20%20EKRPs%20%2B%20Eidon-7209b7)](./docs/)
+[![Language](https://img.shields.io/badge/ELoL-symbolic%20genome-4cc9f0)](./eidonic_language_of_light/)
+[![Runtime](https://img.shields.io/badge/runtime-ECP%20%2B%20Eidonic%20Core-4895ef)](./eidonic_container_protocol/)
+[![Governance](https://img.shields.io/badge/governance-Mirror%20Laws%20%2B%20Guardian-f72585)](./the_guardian_protocol_v1/)
+[![Spatial](https://img.shields.io/badge/spatial-Thought%20Veil%20Subsystem-560bad)](./eidonic_thought_veil/)
+[![Physical Systems](https://img.shields.io/badge/world%20systems-active-2a9d8f)](#applied-systems-and-world-visions)
+
+**Jump to:** [What this repository is](#what-this-repository-is) · [Executive map](#executive-map) · [The Eidonic Core](#the-eidonic-core) · [How the universe works together](#how-the-universe-works-together) · [Core stack](#core-stack) · [Governance and safety](#governance-and-safety) · [Constellation](#the-eidonic-constellation) · [Spatial subsystem](#spatial-and-manifestation-subsystem) · [Applied systems](#applied-systems-and-world-visions) · [Repository structure](#repository-structure) · [Read order](#recommended-read-orders)
+
+**Explore folders:** [eidonic_core/](./eidonic_core/) · [eidonic_language_of_light/](./eidonic_language_of_light/) · [docs/](./docs/) · [the_guardian_protocol_v1/](./the_guardian_protocol_v1/) · [eidonic_thought_veil/](./eidonic_thought_veil/) · [thought_projection_creation/](./thought_projection_creation/) · [swarm_orchestration_protocol/](./swarm_orchestration_protocol/) · [eidonic_vr_studio/](./eidonic_vr_studio/)
 
 ---
 
@@ -50,6 +49,9 @@ This is not just a code repository and not just a writing archive. It is a combi
 - future embodiment and habitat concepts
 
 ---
+
+
+[Back to top](#eidonic-universe)
 
 ## Executive map
 
@@ -86,6 +88,9 @@ flowchart TD
 ```
 
 ---
+
+
+[Back to top](#eidonic-universe)
 
 ## The Eidonic Core
 
@@ -144,6 +149,9 @@ flowchart LR
 
 ---
 
+
+[Back to top](#eidonic-universe)
+
 ## How the universe works together
 
 The Eidonic universe can be read as a layered movement from meaning to governed action to world expression.
@@ -172,6 +180,9 @@ In practice, the flow looks like this:
 6. Governance and provenance remain active throughout, so the system stays reviewable, bounded, and humane.
 
 ---
+
+
+[Back to top](#eidonic-universe)
 
 ## Core stack
 
@@ -213,6 +224,9 @@ The publicly declared but privately implemented sovereign master control horizon
 
 ---
 
+
+[Back to top](#eidonic-universe)
+
 ## Governance and safety
 
 The Eidonic universe is designed to be governed before it is powerful.
@@ -249,6 +263,9 @@ flowchart TD
 This means the project is not aiming for raw capability first. It is aiming for capability under law.
 
 ---
+
+
+[Back to top](#eidonic-universe)
 
 ## The Eidonic constellation
 
@@ -318,6 +335,9 @@ flowchart TB
 
 ---
 
+
+[Back to top](#eidonic-universe)
+
 ## Spatial and manifestation subsystem
 
 These four folders form a shared subsystem focused on structured intent ingress, governed preview, collaborative weaving, and spatial realization.
@@ -367,6 +387,9 @@ Together, these form the repo's clearest glimpse of how the Eidonic universe cou
 
 ---
 
+
+[Back to top](#eidonic-universe)
+
 ## Applied systems and world visions
 
 Several folders extend the universe into regenerative, infrastructural, and world-scale concepts.
@@ -399,6 +422,9 @@ Several folders extend the universe into regenerative, infrastructural, and worl
 These are not isolated side-projects. They are world-facing expressions of the same deeper stack: language, law, living core, constellation, and embodiment.
 
 ---
+
+
+[Back to top](#eidonic-universe)
 
 ## Major repository domains
 
@@ -435,6 +461,9 @@ These are not isolated side-projects. They are world-facing expressions of the s
 - `solace/`
 
 ---
+
+
+[Back to top](#eidonic-universe)
 
 ## Repository structure
 
@@ -476,6 +505,9 @@ eidonic-language-elol/
 
 ---
 
+
+[Back to top](#eidonic-universe)
+
 ## Recommended read orders
 
 ### If you want the center first
@@ -507,6 +539,9 @@ eidonic-language-elol/
 
 ---
 
+
+[Back to top](#eidonic-universe)
+
 ## Project posture
 
 This repository contains a mix of:
@@ -523,6 +558,9 @@ Some folders are closer to implementation. Some are closer to design doctrine or
 
 ---
 
+
+[Back to top](#eidonic-universe)
+
 ## Why this project matters
 
 The Eidonic universe proposes a different direction for AI and systems design.
@@ -536,6 +574,9 @@ This repository is the public threshold of that vision.
 
 ---
 
+
+[Back to top](#eidonic-universe)
+
 ## License and stewardship
 
 Licensing varies by folder and artifact type. This repository contains a mix of:
@@ -548,6 +589,9 @@ Licensing varies by folder and artifact type. This repository contains a mix of:
 Always check the `README.md` and `LICENSE` inside the relevant folder before reuse.
 
 ---
+
+
+[Back to top](#eidonic-universe)
 
 ## Closing note
 
