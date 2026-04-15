@@ -17,313 +17,624 @@ SPDX-License-Identifier: CC-BY-SA-4.0
 
 ---
 
-## Table of Contents
-- [1. Overview](#1-overview)
-- [2. Use Cases](#2-use-cases)
-- [3. Goals](#3-goals)
-- [4. What This Tile Does](#4-what-this-tile-does)
-- [5. System Diagram](#5-system-diagram)
-- [6. Mechanical Stack](#6-mechanical-stack)
-- [7. Electrical Specs](#7-electrical-specs)
-- [7a. Hardware Checklist](#7a-hardware-checklist)
-- [8. Bill of Materials (indicative)](#8-bill-of-materials-indicative)
-- [9. Control Architecture](#9-control-architecture)
-- [10. Firmware Scaffold](#10-firmware-scaffold)
-- [10a. Firmware Starter (C, JSON Telemetry)](#10a-firmware-starter-c-json-telemetry)
-- [10b. Telemetry Schema](#10b-telemetry-schema)
-- [11. Test Plan](#11-test-plan)
-- [11a. Test Rig — SPL Map Logger](#11a-test-rig--spl-map-logger)
-- [12. Guardian Protocol](#12-guardian-protocol)
-- [13. Repository Layout](#13-repository-layout)
-- [14. Open Source Licensing & Stewardship](#14-open-source-licensing--stewardship)
+# Mission Acoustic Control Tile
+## Defense-Oriented Engineering Specification Draft v1.0
+
+### 1. Document Purpose
+This document defines a buildable structural-acoustic control tile for unmanned systems, expeditionary platforms, marine autonomous systems, and vibration-sensitive mission payloads. It is written as an engineering foundation for prototype development, validation, and procurement-facing technical review.
+
+This document replaces concept language with measurable system behavior.
 
 ---
 
-## 1. Overview
-**ERS‑A/10x10** is a 100×100 mm acoustic tile for robots, drones, and lab rigs. It combines **PVDF/MFC piezo actuation**, **MEMS microphone sensing**, and a compact **array DSP/MCU** to:
-- cancel structural resonances (**active vibration damping**),
-- create **quiet zones** and band‑limited **acoustic cloaking** via phased drive,
-- reduce reflected sound at target frequencies by **impedance matching**.
+### 2. Core Assessment
+The original concept contains a viable core and an inflated outer shell.
 
-The tile mounts on composite skins (CFRP/GFRP) and integrates with **EverSource** (48 V) and **EKRP.Energy** for power orchestration, field control, and audit‑grade telemetry.
+The viable core is this:
+- piezoelectric actuation for panel vibration control
+- microphone and inertial sensing for structural-acoustic feedback
+- adaptive control for narrowband or band-limited attenuation
+- modular tile architecture for integration onto skins, panels, shrouds, and equipment bays
+- integration with a 48 V mission power system through local conversion and protection
 
-> This is practical field control. No claims of macroscopic “phase‑through‑matter.”
+The weak parts are these:
+- “acoustic cloaking” as a product claim
+- broad stealth implications without measurement geometry, frequency limits, or environmental constraints
+- unclear distinction between structural damping, airborne active noise control, and reflection control
+- casual treatment of high-voltage piezo drive, EMI, and sensing contamination
+- bench-demo metrics stated as if they are field-ready procurement claims
 
----
-
-## 2. Use Cases
-- **Robots & Drones:** lower acoustic signature (band‑limited), smoother camera feeds via jitter reduction, improved handling in rough air.
-- **Lab Instruments / Quantum Cradles:** local acoustic absorption + active vibration isolation around sensitive payloads.
-- **Composites Panels:** smart skins that tame panel modes and reflected sound in vehicles, pods, and enclosures.
-
----
-
-## 3. Goals
-- **15–25 dB** attenuation at selected tones in **1–5 kHz** (bench demo)
-- **>50%** reduction of dominant structural‑mode RMS on a test panel
-- **Steerable quiet spot** at 20–40 cm using 8‑segment phasing
-- **JSON telemetry** (Alberta time) for auditable runs
+Those errors get removed here.
 
 ---
 
-## 4. What This Tile Does
-- **Active Damping:** senses local response and drives counter‑phase signals to suppress resonances.
-- **Acoustic Cloaking (band‑limited):** shapes amplitude/phase of the reflected field to reduce detectability by mics/sonar over a target band.
-- **Smart Absorption:** dynamically tunes effective acoustic impedance to absorb energy instead of reflecting it.
+### 3. Product Definition
+**Mission Acoustic Control Tile** is a modular, panel-mount structural-acoustic control unit intended to reduce self-noise, damp structural resonances, improve payload stability, and manage local acoustic behavior over defined frequency bands.
+
+The tile is built around:
+- a **piezoelectric actuation layer** for structural excitation and damping
+- a **sensor layer** combining microphones and inertial sensing
+- a **local control electronics layer** for adaptive filtering, mode identification, protection, and telemetry
+- a **protected low-voltage input** derived from a host 48 V mission power bus through local conversion
+
+The product goal is not invisibility. The product goal is measurable reduction of platform-generated vibration and acoustic energy in the frequency bands that matter to the platform, payload, and operating environment.
 
 ---
 
-## 5. System Diagram
-```mermaid
-flowchart TD
-  subgraph Tile
-    MIC[MEMS Mic x4]
-    IMU[IMU x1]
-    PVDF[PVDF Film<br/>Actuation+Sense]
-    MFC[MFC Strips<br/>High-Force Actuation]
-    DRV[Piezo Drivers]
-    MCU[MCU/DSP]
-  end
+### 4. Intended Use Cases
+## 4.1 Unmanned Systems
+- reduction of panel-borne vibration in unmanned ground systems
+- reduction of self-noise near microphones, inertial sensors, and optical payloads
+- stabilization of sensor mounts, electronics housings, and shrouds
+- reduction of tonal or narrowband acoustic signatures generated by structure-coupled components
 
-  subgraph Robot
-    PWR[EverSource 48V + Caps]
-    EN[EKRP.Energy<br/>Power & Field Supervisor]
-    BUS[CAN/UART/BLE]
-  end
+## 4.2 Expeditionary and Defense-Support Systems
+- damping of enclosure panels in field compute shelters and comms nodes
+- reduction of vibration-induced degradation in sensor heads and mast-mounted electronics
+- control of structure-borne noise in modular mission equipment
+- local mitigation of self-generated acoustic contamination around sensitive payloads
 
-  MIC --> MCU
-  IMU --> MCU
-  MCU --> DRV --> PVDF
-  MCU --> DRV --> MFC
+## 4.3 Marine Autonomous Systems
+- damping of hull-adjacent equipment panels, instrument bays, and deck structures
+- reduction of vibration transfer into navigation, imaging, and communications payloads
+- management of local airborne and structure-borne noise inside instrument enclosures
+- integration into corrosion-managed, condensation-aware enclosures and mount stacks
 
-  PWR --> DRV
-  MCU <---> BUS <---> EN
-  EN --> PWR
-```
+## 4.4 Sensitive Payload Protection
+- stabilization of optical, inertial, and metrology payloads
+- reduction of vibration-driven jitter in camera systems
+- reduction of panel resonance in precision equipment housings
 
 ---
 
-## 6. Mechanical Stack
-1. **Topcoat:** thin elastomeric, matte (optional moth‑eye microtexture)
-2. **Acoustic Layer:** micro‑cavity viscoelastic (tunable impedance)
-3. **PVDF Film:** 28–52 µm, segmented electrodes (8 zones)
-4. **MFC Strips:** 2–4 pieces bonded to backing plate (force for low‑kHz)
-5. **Backing Plate:** 1 mm Al or composite coupon (mount to robot frame)
-6. **Sensor Nodes:** 4× MEMS mics (corners) + 1× IMU (center)
+### 5. Non-Goals
+This product is not intended to claim or deliver:
+- full-spectrum broadband acoustic invisibility
+- platform-wide acoustic elimination in open environments
+- guaranteed defeat of external sensing systems
+- unconstrained stealth performance without geometry-specific validation
+- uncontrolled airborne ultrasonic output
+
+A fieldable product lives on bounded claims, not fantasy.
 
 ---
 
-## 7. Electrical Specs
-- **Input Power:** 12–24 V DC to local drivers (from 48 V EverSource via DC/DC)
-- **Power Draw:** 1–5 W typical (bursts 10–20 W, < 5 s, duty‑limited)
-- **Actuation Bands:** 500 Hz–8 kHz (PVDF), 100 Hz–2 kHz (MFC)
-- **Sensing:** 4× analog MEMS mics (48 kHz), IMU @ 1–4 kHz ODR
-- **Comms:** CAN‑FD (primary) + BLE debug
-- **uC/DSP:** Cortex‑M7/M33 or small DSP (>200 MHz), 2× I2S, 2× ADC
-
-### 7a. Hardware Checklist
-- **HV Piezo Drive**
-  - Observe creepage/clearance per IEC 62368‑1; target **≥3.2 mm** for ~150–300 Vpk nodes; add mask dams & keep‑outs.
-  - Place **bleeder resistors** on HV rails; discharge < 1 s after power‑down.
-  - **TVS diodes** on input rails; series **PTC/fast‑blow fuse** on tile input.
-- **Connectors & Cabling**
-  - Locking, vibration‑safe (JST‑GH/MicroFit). Strain‑relief all harnesses.
-  - Shielded twisted pairs for mic signals; star‑grounding to driver ground.
-- **Thermal**
-  - Thermistors on drivers & tile; hotspot limit **< 60 °C**; copper pours/thermal vias.
-- **EMI/ESD**
-  - RC snubbers on noisy nodes; guard traces around mic front‑ends; ESD diodes on ports.
-- **Layout**
-  - Separate analog (mics/IMU) and HV planes; single‑point ground tie at power entry.
-- **Safety Labels**
-  - Mark HV areas; interlock cover screws if exposing HV; include SPL/ultrasonic warnings.
+### 6. System Objectives
+The system shall be designed to meet the following objectives:
+1. reduce dominant structural resonances on host panels or skins over defined target bands
+2. reduce local self-noise near sensitive payloads or reference sensing points
+3. improve payload stability by reducing structure-driven vibration
+4. provide modular tile-based installation with serviceable replacement
+5. operate from protected low-voltage rails derived from a 48 V host supply
+6. remain safe under high-voltage piezo-drive, thermal, and fault conditions
+7. provide telemetry sufficient for validation, tuning, and maintenance review
+8. tolerate expeditionary environmental stress through appropriate packaging and design margins
+9. support marine adaptation through corrosion-aware materials, sealing, and condensation control
+10. support local-only operation without dependence on cloud connectivity or remote services
 
 ---
 
-## 8. Bill of Materials (indicative)
-| Item | Example | Notes |
-|---|---|---|
-| PVDF film | PVDF/TrFE 28–52 µm, segmented | 8 electrode zones, adhesive‑backed |
-| MFC strips | PZT fiber composite (e.g., M8528‑P1) | 2–4 pcs, epoxy bond |
-| MEMS mic | Analog mics (Knowles/Infineon) | 4 pcs, matched |
-| IMU | 6‑axis (ICM‑42688 or similar) | center‑mounted |
-| Piezo driver | Multi‑ch HV piezo drivers | gate PVDF/MFC |
-| DC/DC | 48 V→24 V/12 V isolated buck | from EverSource |
-| MCU/DSP | STM32H7 / RP2040+codec / ADAU | signal chain |
-| PCB | 4‑layer, HV clearances | conformal coat |
-| Encapsulation | thin elastomer + adhesive | removable tile |
+### 7. Technical Positioning
+This product sits at the intersection of three real engineering domains:
+- **active structural vibration control**
+- **active noise control**
+- **smart-panel or smart-skin integration**
 
-> Validate all voltage, current, and temperature limits against vendor datasheets.
+Those domains must be separated clearly.
 
----
+## 7.1 Structural Damping
+The primary fieldable function is structural damping. Piezoelectric patches and composite actuators are well-established tools for reducing structural vibration when properly bonded, located, and driven against measured modes.
 
-## 9. Control Architecture
-- **Modal ID:** excite chirp; estimate dominant modes from mic/IMU PSD.
-- **Active Damping (FxLMS):** per‑mode controller drives PVDF/MFC with adaptive gains.
-- **Phased Cloak:** split PVDF into 8 segments; compute phase/amplitude to minimize probe‑mic error at target point (quiet zone).
-- **Energy & Safety:** duty cycle/voltage clamps; thermal monitor; caps deliver bursts; approvals via **EKRP.Energy**.
+## 7.2 Local Active Noise Control
+Active noise control can create local attenuation zones or reduce error at specific sensing points. It does not create broad, geometry-independent silence. Any quiet-zone or cancellation claim must specify frequency band, geometry, sensor placement, and boundary conditions.
+
+## 7.3 Reflection or Impedance Control
+Reflection reduction is possible in tightly defined setups, but it is not the first deliverable for a fieldable mission tile. Reflection-control work belongs in later versions after structural damping and local self-noise control are validated.
 
 ---
 
-## 10. Firmware Scaffold
-```c
-// pseudocode (C‑style)
-init_io(); init_codecs(); init_can(); limits_load(); piezo_init();
-while (1) {
-  read_mics_block(x[4][N]);           // I2S/ADC
-  read_imu_block(a[N]);
-  if (need_modal_update()) {
-    modes = estimate_modes(x, a);
-    fxlms_tune(&ctrl, modes);
-  }
-  e = error_mix(x, target_profile);
-  u = fxlms_step(&ctrl, e);           // multi‑channel output
-  u = enforce_limits(u, vmax, duty);
-  if (quietzone_enabled) {
-    ph = solve_phasing(x, target_point);
-    u  = apply_phase_offsets(u, ph);
-  }
-  drive_piezo(u);                     // PVDF/MFC channels
-  log_json_tick(e, u, temps, duty);   // time‑stamped telemetry (Alberta)
-}
-```
+### 8. Product Variants
+## 8.1 Variant A: Structural Damping Tile
+Primary function:
+- panel-mode damping
+- payload jitter reduction
+- reduction of structure-borne noise transmission
 
-### 10a. Firmware Starter (C, JSON Telemetry)
-```c
-// src/main.c (template)
-#include <stdio.h>
-#include <stdint.h>
-#include "drivers.h"   // HAL: i2s, adc, can, piezo, timers
-#include "fxlms.h"     // controller stub
+This is the recommended first product.
 
-static void json_tick(float att_db, float temp_drv, float temp_tile) {
-  printf("{\"t\":\"%lu\",\"tile\":\"ERS-A/10x10#001\",\"atten_dB\":%.2f,\"temps_c\":{\"drv\":%.1f,\"tile\":%.1f}}\n",
-         (unsigned long)rtc_epoch_ms(), att_db, temp_drv, temp_tile);
-}
+## 8.2 Variant B: Acoustic Management Tile
+Adds:
+- local error-microphone control
+- limited local airborne attenuation around defined probe locations
+- enhanced tuning for enclosure or shroud integration
 
-int main(void){
-  hal_init(); codecs_init(); can_init(); limits_load(); piezo_init();
-  fxlms_t ctrl = fxlms_make(/*channels=*/8);
-  while(1){
-    mic_block_t mb = i2s_read_block();
-    imu_block_t ib = imu_read_block();
-    if(modal_needs_update()){
-      modes_t m = estimate_modes(&mb,&ib);
-      fxlms_tune(&ctrl,&m);
-    }
-    float e = error_mix(&mb);
-    drive_t u = fxlms_step(&ctrl,e);
-    enforce_limits(&u, limits_vmax(), limits_duty());
-    if(quietzone_enabled()){
-      phase_t ph = solve_phase(&mb, target_point());
-      apply_phase_offsets(&u,&ph);
-    }
-    piezo_drive(&u);
-    json_tick(current_atten_dB(), temp_drv_c(), temp_tile_c());
-  }
-}
-```
+This is a controlled expansion, not the starting point.
 
-### 10b. Telemetry Schema
-```json
-{
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "ERS-A Telemetry Tick",
-  "type": "object",
-  "properties": {
-    "t": {"type": "string", "description": "ISO8601 or epoch ms (America/Edmonton)"},
-    "tile": {"type": "string"},
-    "modes": {"type": "array", "items": {"type": "number"}},
-    "fxlms": {"type": "object", "properties": {"mu": {"type":"number"}, "norm": {"type":"number"}}},
-    "quiet": {"type": "object", "properties": {"target": {"type":"array", "items":{"type":"number"}}, "atten_dB": {"type":"number"}}},
-    "limits": {"type": "object", "properties": {"vmax": {"type":"number"}, "duty": {"type":"number"}}},
-    "temps_c": {"type": "object", "properties": {"drv": {"type":"number"}, "tile": {"type":"number"}}}
-  },
-  "required": ["t","tile","temps_c"]
-}
-```
+## 8.3 Variant C: Marine Acoustic Control Tile
+Adds:
+- marine materials and coatings
+- sealing and condensation strategy
+- corrosion-managed connector and fastener stack
+- vibration and slamming-load mechanical hardening
+
+## 8.4 Variant D: Expeditionary Mission Tile
+Adds:
+- field-service connectorization
+- EMI-conscious enclosure and harness layout
+- low-light and gloved-hand service features
+- robust operation in dirty, electrically noisy environments
 
 ---
 
-## 11. Test Plan
-**Bench (anechoic corner / foam baffle)**
-1. **Resonance Damping:** mount tile on 1 mm Al coupon; excite with shaker/speaker; measure PSD before/after → target **>50% RMS** reduction on dominant mode.
-2. **Reflection Notch:** plane‑wave tone sweep at normal incidence; measure reflected SPL → **15–25 dB** dip in band.
-3. **Quiet Zone:** place probe mic 30 cm off‑normal; phase the 8 segments to minimize probe SPL → log spatial map.
-4. **Power & Thermal:** step drives (10 s on / 50 s off) → verify driver/tile temps within limits; confirm duty clamp.
+### 9. System Architecture
+## 9.1 Core Subsystems
+1. **Piezoelectric Actuation Layer**
+   - piezo film, piezoceramic patches, macro-fiber composite elements, or a hybrid stack depending on variant
+   - segmented actuation zones where spatial control is required
 
-**Acceptance Metrics**
-- Attenuation ≥ 15 dB at target tone; ≥10 dB across ±100 Hz band
-- Modal RMS reduction ≥ 50%
-- Peak tile temp < 60 °C; surface contact < 42 °C
-- Telemetry rate ≥ 5 Hz; no missed safety events
+2. **Sensor Layer**
+   - local microphones for acoustic error or response measurement
+   - IMU or accelerometer for structural response measurement
+   - optional strain or voltage feedback from the piezo layer where architecture supports it
 
-### 11a. Test Rig — SPL Map Logger
-> Minimal Python tool to drive a sweep from a speaker, record mic response, and log a 2D map before/after control.
+3. **Drive Electronics Layer**
+   - high-voltage piezo drive stage with current limiting and discharge path
+   - protected low-voltage control rails
+   - monitoring for temperature, supply condition, and fault state
 
-**Install:** `pip install sounddevice numpy scipy matplotlib pyserial`
+4. **Control Layer**
+   - MCU, DSP, or mixed processor architecture
+   - modal identification, control law execution, protection logic, and telemetry
 
-```python
-# tools/spl_map_logger.py
-import numpy as np, sounddevice as sd, serial, time
-from scipy.signal import chirp
+5. **Mechanical Stack**
+   - bonded or mechanically retained tile stack matched to host panel stiffness and environment
+   - removable or replaceable integration strategy for field service where possible
 
-FS=48000; DUR=2.0; F0=200; F1=5000; AMP=0.2
-
-def sweep():
-    t=np.linspace(0,DUR,int(FS*DUR),endpoint=False)
-    x=chirp(t,f0=F0,f1=F1,t1=DUR,method='log')*AMP
-    sd.play(x,FS); y=sd.rec(len(x),samplerate=FS,channels=1); sd.wait()
-    return x, y[:,0]
-
-if __name__=='__main__':
-    try:
-        ser=serial.Serial('COM6',115200,timeout=1)
-        ser.write(b'CTRL OFF\n'); time.sleep(0.3)
-    except Exception:
-        ser=None
-
-    x0,y0=sweep()
-    if ser:
-        ser.write(b'CTRL ON\n'); time.sleep(0.3)
-    x1,y1=sweep()
-
-    np.savez('spl_session.npz', fs=FS, x0=x0, y0=y0, x1=x1, y1=y1)
-    print('saved spl_session.npz')
-```
+## 9.2 Energy Routing Philosophy
+- host 48 V system provides input power to a protected local conversion stage
+- local conversion supplies logic rails and piezo drive front end
+- burst energy demands are constrained locally and may request permission from the host power controller where architecture requires coordination
+- all high-voltage piezo stages shall fail to a safe, discharged condition under controlled shutdown
 
 ---
 
-## 12. Guardian Protocol
-```csharp
-// === 🔥🔥🔥 Guardian Protocol: Bioacoustics & HV ===
-// • Ultrasonic exposure: keep below conservative skin/ear limits; auto‑throttle on SPL + temperature.
-// • HV piezo: isolation, current limiting, bleeder discharge on power‑down; creepage/clearance per IEC 62368‑1.
-// • Thermals: sensors on drivers & tile; hard cutback > 60 °C.
-// • Auditability: time‑stamped JSON logs; fail safe on anomalies; seeds kept for reproducibility.
-```
+### 10. Mechanical Architecture
+## 10.1 Tile Stack Baseline
+A fieldable tile stack should use:
+1. protective outer cover or tuned surface skin
+2. constrained or unconstrained damping layer as required
+3. piezoelectric actuator layer
+4. structural backing or host panel bond interface
+5. local sensor placement matched to mode shape and access constraints
+6. protected harness exit or integrated connector edge
+
+## 10.2 Materials Strategy
+Use materials for duty environment, not novelty.
+
+Recommended baseline:
+- aluminum or composite backing structure where stiffness, heat spreading, and bond quality matter
+- flame-rated polymer covers or conformal protection where electrical isolation is required
+- adhesives selected by thermal range, peel resistance, and long-term bond integrity
+- marine variant to include corrosion-resistant metals, galvanic compatibility review, and moisture-managed mounting details
+
+## 10.3 Integration Strategy
+The tile shall not be treated as decorative applique. It is a tuned electromechanical subsystem.
+
+Required integration controls:
+- bond-line thickness control
+- surface preparation procedure
+- wiring strain relief
+- connector retention
+- replacement procedure
+- host-panel material compatibility review
 
 ---
 
-## 13. Repository Layout
-```
-ERS-P1-Acoustic/
-├─ firmware/               # DSP/MCU code, telemetry helpers
-├─ hardware/               # PCB, driver refs, wiring, safety notes
-├─ mechanics/              # CAD of tile stack, mounts
-├─ tools/                  # SPL logger, plots, replay scripts
-├─ docs/                   # reports, diagrams
-└─ README.md               # this file
-```
+### 11. Sensing Architecture
+## 11.1 Structural Sensing Priority
+The first sensing priority shall be structural response, not open-air acoustic theatrics.
+
+Recommended sensors:
+- 1 to 3 local accelerometers or IMU channels for structural response
+- optional piezo self-sensing where signal quality supports it
+- microphones only where there is a defined acoustic control objective
+
+## 11.2 Microphone Use Rules
+Microphones are useful for:
+- local error sensing
+- enclosure acoustic monitoring
+- validation of self-noise reduction near a payload or reference point
+
+Microphones are not magic. Their utility is bounded by placement, bandwidth, contamination, wind noise, and EMI susceptibility.
+
+## 11.3 Sensor Protection
+- acoustic ports shall be protected from contamination without destroying bandwidth
+- microphone placement shall avoid direct contamination by drive airflow, grit, or splash
+- marine variants shall protect ports and connectors against salt contamination and condensation
 
 ---
 
-## 14. Open Source Licensing & Stewardship
-- **Hardware designs** (reference PCBs, wiring, mechanical notes): **CERN OHL‑S v2.0**
-- **Software/Firmware** (ERS‑A control, tools): **EIDONIC COMMUNITY LICENSE**
-- **Documentation** (this README and docs): **CC BY‑SA 4.0**
+### 12. Actuation Architecture
+## 12.1 Actuator Selection
+The actuation layer shall be selected against measured structural requirements.
 
-**Trademarks:** **Eidonic™**, **EverSource™**, **ERS™** retained.
+Recommended guidance:
+- **piezo film** for lightweight distributed sensing or high-frequency actuation with modest force
+- **macro-fiber composite or piezoceramic patch elements** for higher-force structural control where panel authority is required
+- **hybrid stacks** only when the control problem justifies added complexity
 
-> Safety‑relevant changes: submit signed PRs with bench logs (telemetry JSON + SPL plots).
+## 12.2 Segmentation
+Segmented actuation is useful when:
+- controlling multiple local modes
+- shaping a response on a panel or enclosure wall
+- performing controlled bench experiments on local field shaping
+
+Segmenting the tile does not automatically create fieldable signature suppression. It creates more control authority at the cost of complexity.
+
+## 12.3 High-Voltage Drive Rules
+The high-voltage piezo drive stage shall include:
+- creepage and clearance design appropriate to the selected voltage and environment
+- controlled discharge path
+- current limiting
+- thermal monitoring
+- fault shutdown behavior
+- service labeling and guarded access where exposure is possible
+
+---
+
+### 13. Electronics and Power
+## 13.1 Input Power
+Recommended baseline:
+- host supply: 48 V nominal bus
+- local conversion: 48 V to protected low-voltage rails for control and piezo-front-end supply
+- optional isolated conversion where ground noise or platform integration demands it
+
+## 13.2 Power Envelope
+Initial target envelope for a 100 mm class tile:
+- steady-state power: low single-digit watts for structural damping mode
+- elevated burst power during retuning, transient control, or high-authority actuation
+- final power target shall be set from measured authority requirements, not guessed from optimism
+
+## 13.3 Protection Requirements
+The electronics stack shall include:
+- input protection
+- reverse polarity protection where connector risk exists
+- transient suppression on external interfaces
+- overtemperature monitoring
+- watchdog handling for controller faults
+- safe disable path for the HV stage
+
+## 13.4 EMI Discipline
+The tile mixes sensitive sensing and high-voltage switching. Without disciplined partitioning it becomes self-jamming hardware.
+
+Required layout and architecture principles:
+- separated analog and drive domains
+- controlled grounding strategy
+- filtered power entry
+- shielded or controlled sensor interconnects where needed
+- enclosure and harness review for emissions and susceptibility
+
+---
+
+### 14. Control Architecture
+## 14.1 Recommended Control Progression
+Start with the control problem you can actually validate.
+
+### Stage 1
+- modal identification
+- fixed or semi-adaptive damping on dominant structural modes
+- accelerometer-driven closed loop
+
+### Stage 2
+- adaptive structural damping with mode tracking
+- limited supervisory optimization
+- payload-specific tuning profiles
+
+### Stage 3
+- local airborne active noise control in defined geometries
+- error-microphone-driven attenuation at defined points
+- enclosure-specific acoustic management
+
+### Stage 4
+- advanced multi-tile coordination if and only if the single-tile problem is solved
+
+## 14.2 Algorithms
+Candidate algorithm set:
+- modal identification from swept or operational excitation
+- narrowband adaptive control
+- filtered-x LMS or related methods for defined ANC tasks
+- gain scheduling by thermal, power, and mode authority limits
+- fault-aware control reversion
+
+## 14.3 Control Modes
+- boot
+- standby
+- identify
+- damping active
+- acoustic management active
+- thermal derate
+- fault limited
+- safe discharge
+- maintenance
+
+## 14.4 Telemetry Minimum Set
+- tile ID
+- supply voltage and current
+- actuator command state
+- sensor health
+- dominant mode estimate
+- attenuation or vibration-reduction metric
+- board and tile temperatures
+- fault codes and event counters
+- runtime and service counters
+
+---
+
+### 15. Performance Framing
+## 15.1 Claims That Are Credible
+A credible first-generation tile may target:
+- measurable reduction of dominant panel vibration in the defined target band
+- measurable reduction of payload jitter or structural acceleration at the mount point
+- local reduction of self-noise at a reference microphone under controlled geometry
+- repeatable thermal and electrical behavior under duty-limited actuation
+
+## 15.2 Claims That Need Restraint
+Do not claim:
+- broadband global attenuation around an entire platform
+- stable free-space quiet zones in uncontrolled environments
+- generalized acoustic signature suppression without geometry- and band-specific qualification
+
+## 15.3 Recommended Metrics
+Replace vague stealth language with these:
+- reduction in panel acceleration or velocity response at dominant modes
+- reduction in payload line-of-sight jitter or image blur proxy
+- reduction in microphone error signal at a defined reference point
+- power consumed per decibel or per unit vibration reduction
+- thermal rise under representative duty cycle
+- mean time to retune after configuration change
+
+---
+
+### 16. Defense-Oriented Requirements
+## 16.1 Expeditionary Deployment
+The defense-support version shall prioritize:
+- rugged field handling
+- low-light serviceability
+- offline configuration and logging
+- survivability in electrically noisy environments
+- predictable degraded-mode behavior
+
+## 16.2 Local-Only Operation
+The system shall not require cloud connectivity for protection, control, or baseline tuning.
+
+## 16.3 Maintainability
+- configuration shall be loadable locally
+- fault logs shall be recoverable locally
+- module replacement shall not require destructive removal
+- connector and fastener choices shall tolerate gloved handling where possible
+
+## 16.4 Signature Management Framing
+For procurement language, describe this tile as:
+- structural-acoustic self-noise management
+- payload protection through vibration reduction
+- local acoustic environment conditioning
+- mission equipment stability enhancement
+
+Do not describe it as magic stealth skin.
+
+---
+
+### 17. Marine Adaptation Notes
+Marine use is not a cosmetic branch.
+
+Required changes include:
+- corrosion-resistant hardware and conductor strategy
+- galvanic isolation review
+- sealed but inspectable harness and connector paths
+- condensation-aware venting and packaging
+- bond-system validation under humidity and thermal cycling
+- mechanical validation under vibration and slamming loads
+
+Where shipboard or marine-power integration is required, input and grounding architecture shall be reviewed as a distinct design problem rather than assumed from the land variant.
+
+---
+
+### 18. Human Factors and Safety
+## 18.1 Acoustic Safety
+The product shall not expose operators or nearby personnel to uncontrolled high-level acoustic or ultrasonic output during normal service.
+
+## 18.2 Electrical Safety
+High-voltage piezo drive requires:
+- guarded access
+- discharge verification after power-down
+- labeling of hazardous areas
+- service procedures that prevent accidental energized exposure
+
+## 18.3 Thermal Safety
+The system shall monitor board and tile temperature and shall derate or disable before unsafe surface or component temperatures are reached.
+
+## 18.4 Field-Service Safety
+The service path shall include:
+- de-energized maintenance state
+- discharge confirmation for HV nodes
+- connector access without live exposure
+- unambiguous fault indication
+
+---
+
+### 19. Standards and Qualification Alignment
+The program shall be designed from the start to align with the standards environment expected for defense-support electronics and fieldable subsystems.
+
+Relevant alignment areas include:
+- environmental tailoring and laboratory test planning
+- EMI emissions and susceptibility control
+- human engineering and maintainability
+- airborne or structure-borne noise measurement where procurement requires it
+- power-interface compatibility where vehicle or external field sources are used
+
+This is a design input problem, not a paperwork problem.
+
+---
+
+### 20. Development Roadmap
+## Phase 0: Requirements Lock
+Deliverables:
+- host-panel definition
+- target mode and frequency list
+- load and power envelope
+- environment and service profile
+- acceptance metrics
+- variant definition
+
+Exit condition:
+- one-page requirements baseline approved
+
+## Phase 1: Structural Damping Bench Unit
+Build:
+- single tile
+- structural sensors
+- one actuation technology
+- protected power input
+- basic telemetry
+- fixed or semi-adaptive damping control
+
+Test:
+- panel-mode identification
+- dominant-mode attenuation
+- thermal response
+- power response
+- sensor integrity under drive
+
+Exit condition:
+- repeatable structural damping improvement demonstrated
+
+## Phase 2: Ruggedized Single Tile
+Add:
+- fieldable enclosure and harnessing
+- better HV protection and service design
+- improved EMI discipline
+- thermal derate logic
+
+Test:
+- vibration screening
+- ingress screening appropriate to prototype level
+- EMI pre-compliance review
+- service and fault-state validation
+
+Exit condition:
+- tile survives realistic handling and retains performance
+
+## Phase 3: Variant Branching
+### A. Unmanned variant
+- panel and payload integration
+- local noise reference sensing
+- field telemetry integration
+
+### B. Marine variant
+- corrosion-managed construction
+- condensation protection
+- marine connector revision
+
+### C. Expeditionary variant
+- gloved service interface
+- dirty-power tolerance review
+- local-only maintenance workflow
+
+Exit condition:
+- controlled field trials possible
+
+## Phase 4: Advanced Acoustic Management
+Only after the structural damping problem is solved.
+
+Add:
+- local error-microphone control
+- enclosure-specific acoustic shaping
+- multi-tile coordination where justified
+
+---
+
+### 21. Test Plan Structure
+## 21.1 Structural Tests
+- modal survey of host panel before control
+- controlled excitation and response measurement
+- reduction of dominant modal response
+- recovery after power cycle and retune
+
+## 21.2 Acoustic Tests
+- reference-point microphone reduction under controlled geometry
+- enclosure-noise reduction for payload-bay scenarios
+- repeatability across temperature and mounting variation
+
+## 21.3 Electrical Tests
+- power draw under idle, active, and burst modes
+- HV discharge timing
+- fault shutdown behavior
+- source disturbance tolerance
+
+## 21.4 Environmental Tests
+- temperature cycling
+- vibration screening
+- humidity exposure
+- salt-exposure screening for marine variant
+- contamination and connector handling review
+
+## 21.5 Operational Tests
+- tune or retune time
+- telemetry continuity
+- degraded-mode behavior
+- field replacement or service access trial
+
+---
+
+### 22. Initial Prototype Recommendation
+Start with the simplest version that proves authority.
+
+## Recommended first hardware target
+- one 100 mm class structural damping tile
+- one dominant host panel or coupon geometry
+- accelerometer-first control loop
+- optional microphone only for validation, not core control
+- one actuator technology, not a kitchen-sink hybrid
+- protected 48 V to local supply conversion
+- HV stage with safe discharge and thermal monitoring
+- local telemetry over CAN or service interface
+- no procurement claims about acoustic cloaking
+
+This is enough to prove whether the product has real authority over the structure.
+
+---
+
+### 23. Open Design Decisions
+These must be resolved before schematic and mechanical lock:
+- piezo film versus macro-fiber composite versus ceramic patch baseline
+- bonded versus mechanically retained tile strategy
+- sensor mix and placement
+- control processor architecture
+- allowable steady and burst power envelope
+- field-service connector and harness standard
+- host-panel material and thickness envelope
+- marine bond system and coating stack
+- EMI containment strategy
+
+---
+
+### 24. Required Next Artifacts
+The next engineering documents to produce are:
+1. system requirements specification with numbered SHALL statements
+2. host-panel and payload use-case matrix
+3. mode-identification test procedure
+4. electrical block diagram with HV and protection boundaries
+5. control state machine and fault table
+6. mechanical stack drawing and bond-process specification
+7. prototype BOM and sourcing matrix
+8. validation test plan and verification matrix
+
+---
+
+### 25. Final Engineering Statement
+Mission Acoustic Control Tile is a modular structural-acoustic control subsystem centered on piezoelectric actuation, local sensing, protected electronics, and disciplined control. Its purpose is to reduce platform self-noise, damp structural resonances, and protect sensitive payloads in unmanned, marine, expeditionary, and sovereign mission systems.
+
+That is the buildable version. Everything else is theater.
+
+ + SPL plots).
 
