@@ -2,8 +2,6 @@
 SPDX-License-Identifier: CC-BY-SA-4.0
 -->
 
-> Band‑limited acoustic cloaking + active damping tile for robots & instruments. Orchestrated by **EKRP.Energy** and powered by **EverSource**.
-
 <p align="center">
 <a href="#1-overview"><img alt="Status" src="https://img.shields.io/static/v1?label=Status&message=Prototype%20Spec&color=00b894"></a>
 <a href="#7-electrical-specs"><img alt="Power" src="https://img.shields.io/static/v1?label=Power&message=1%E2%80%935W%20typ&color=6c5ce7"></a>
