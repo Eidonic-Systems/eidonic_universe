@@ -2,8 +2,6 @@
 SPDX-License-Identifier: CC-BY-SA-4.0
 -->
 
-# Eidonic Resonance Skin — **P1 Acoustic Patch** (ERS‑A/10x10)
-
 > Band‑limited acoustic cloaking + active damping tile for robots & instruments. Orchestrated by **EKRP.Energy** and powered by **EverSource**.
 
 <p align="center">
