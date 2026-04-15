@@ -21,7 +21,7 @@ SPDX-License-Identifier: CC-BY-SA-4.0
 ## Defense-Grade Engineering Specification Draft v1.1
 
 ### 1. Document Purpose
-This document defines a buildable hybrid power platform for unmanned sy([linkedin.com](https://www.linkedin.com/posts/niklaslindahl_drone-companies-to-keep-an-eye-on-march-activity-7435676611871625216-Z62w?utm_source=chatgpt.com)) field systems, and defense-facing mission support. It is written as an engineering and procurement-facing foundation. The scope is limited to architectures that can be prototyped, validated, qualified, and manufactured with current components, standard industrial processes, and credible compliance pathways.
+This document defines a buildable hybrid power platform for unmanned field systems, and defense-facing mission support. It is written as an engineering and procurement-facing foundation. The scope is limited to architectures that can be prototyped, validated, qualified, and manufactured with current components, standard industrial processes, and credible compliance pathways.
 
 This document is intentionally stand-alone. It does not depend on any external partner architecture, branding, or third-party concept framing.
 
