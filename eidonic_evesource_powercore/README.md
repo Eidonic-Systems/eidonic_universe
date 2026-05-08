@@ -2,7 +2,7 @@
 SPDX-License-Identifier: CC-BY-SA-4.0
 -->
 
-# Eidonic EverSource™ Battery Core *(EKRP Aligned)*
+# Eidonic EveSource™ Battery Core *(EKRP Aligned)*
 
 > “A living heart of power — continuously replenished, endlessly scalable, and safe by design.”
 
@@ -17,7 +17,7 @@ SPDX-License-Identifier: CC-BY-SA-4.0
 
 ---
 
-# EverSource Mission Power Module
+# EveSource Mission Power Module
 ## Defense-Grade Engineering Specification Draft v1.1
 
 ### 1. Document Purpose
@@ -28,7 +28,7 @@ This document is intentionally stand-alone. It does not depend on any external p
 ---
 
 ### 2. Product Definition
-**EverSource Mission Power Module** is a modular 48 V nominal hybrid energy storage and power delivery unit built around:
+**EveSource Mission Power Module** is a modular 48 V nominal hybrid energy storage and power delivery unit built around:
 - a **LiFePO4 battery pack** for primary energy storage
 - a **managed supercapacitor burst stage** for transient load handling and regenerative energy capture
 - a **battery and power management controller** for protection, telemetry, charging control, and load arbitration
@@ -38,6 +38,8 @@ This document is intentionally stand-alone. It does not depend on any external p
 The platform is intended to increase mission uptime, power quality, cycle life, cold-weather reliability, environmental survivability, and field serviceability.
 
 This is not an infinite-energy system. Runtime remains bounded by stored energy, recharge access, auxiliary input contribution, system losses, and load profile.
+
+![Eidonic Evesource Powercore](evesource_powercore.png)
 
 ---
 
@@ -98,6 +100,8 @@ Key traits:
 - EMI-heavy electrical environments
 - requirement for local operation without cloud dependency
 - requirement for rapid swap, inspection, and replacement under field conditions
+
+![Evesource Drones](evesource_powercore_drones.png)
 
 ---
 
@@ -707,6 +711,8 @@ Recommended bus partitioning:
 - define return-to-home energy reserve logic where autonomy stack supports it
 - define propulsion derate thresholds based on remaining reserve and fault state
 
+![Evesource Marine Vessels](evesource_powercore_marine_vessel.png)
+
 ---
 
 ### 20. Positioning Notes for Defense and Procurement Audiences
@@ -755,7 +761,8 @@ The next engineering documents to produce are:
 ---
 
 ### 23. Final Engineering Statement
-EverSource Mission Power Module is a modular hybrid power platform centered on LiFePO4 storage, managed supercapacitor burst support, controlled charging, environmental hardening, and serviceable system integration. It is suitable as a common electrical core for unmanned systems, sovereign AI backup installations, expeditionary field systems, and unmanned marine platforms when variant-specific mechanical, environmental, and interface requirements are properly implemented.
+EveSource Mission Power Module is a modular hybrid power platform centered on LiFePO4 storage, managed supercapacitor burst support, controlled charging, environmental hardening, and serviceable system integration. It is suitable as a common electrical core for unmanned systems, sovereign AI backup installations, expeditionary field systems, and unmanned marine platforms when variant-specific mechanical, environmental, and interface requirements are properly implemented.
 
 That is the procurement-ready version. The rest is theater.
 
+![Evesource Robot](evesource_powercore_robot.png)
