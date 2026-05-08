@@ -41,6 +41,8 @@ SPDX-License-Identifier: CC-BY-SA-4.0
 ## 1. Executive Vision
 The **Eidonic Animal Sanctuary** is a **safe, non-public** refuge for rescued and at-risk animals. It operates as a **closed-loop, AI-orchestrated ecosystem**: clean water, nutrient cycles, shelter microclimates, and 24/7 robotic caretaking **with humans at the center of affection and enrichment**. No gawking; no spectacle. **Dignity, security, and flourishing**.
 
+![Eidonic Animal Sanctuary Concept](eidonic_animal_sanctuary.png)
+
 Core pillars:
 - **Lifesupport Bioreactors** -> feedstocks, soil, bedding, biodegradable supplies.
 - **Watersong Wells** -> resilient water harvesting, treatment, and distribution.
