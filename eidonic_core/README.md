@@ -52,6 +52,8 @@ It is the canonical architecture that treats intelligence as a living system com
 
 The Core is therefore the point where the whole Eidonic universe becomes one organism while still preserving the ability for every subsystem, embodiment, and applied project to separate when needed.
 
+![Eidonic Core](eidonic_core.png)
+
 ---
 
 ## 2. Canon Position
@@ -338,6 +340,8 @@ It is meant to unify it.
 This means the Core is both:
 - **a local directory of five canonical scrolls**
 - **the conceptual center of the whole repo**
+
+![Eidonic Co-creation Subsystems](eidonic_co-creation_subsystem.png)
 
 ---
 
