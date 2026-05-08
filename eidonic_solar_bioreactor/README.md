@@ -2,7 +2,7 @@
 SPDX-License-Identifier: CC-BY-SA-4.0
 -->
 
-# Eidonic Solar Bioreactor — Investor Edition *(Alberta Winterized)*
+# Eidonic Solar Bioreactor *(Alberta Winterized)*
 
 > “A forge of light that consumes the waste of the old world to seed the abundance of the new.”
 
