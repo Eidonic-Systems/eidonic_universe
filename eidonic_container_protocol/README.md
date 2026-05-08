@@ -13,6 +13,8 @@
 
 ECP is a lightweight, **containerless** runtime for orchestrating *glyphs* (discrete actions) under the **Guardian Protocol** and **Mirror Laws**. It replaces external container tooling with a sealed, verifiable execution vessel you can run anywhere.
 
+![Eidonic Container Protocol](ecp.png)
+
 ---
 
 ## Why ECP
