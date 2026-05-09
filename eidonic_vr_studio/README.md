@@ -20,12 +20,7 @@ SPDX-License-Identifier: CC-BY-SA-4.0
 
 VR Studio is the persistent spatial shell of the subsystem. It is where preview becomes embodied, where EKRP weaving becomes visible, and where proposal and commit states can be navigated, reviewed, and manifested in spatial form.
 
-### What this folder contains
-
-- [`README.md`](./README.md)  
-  This GitHub-facing overview for the subsystem folder.
-- [eidonic_vr_studio.md](./eidonic_vr_studio.md)  
-  The main subsystem scroll.
+![Eidonic VR Studio](eidonic_vr_studio.png)
 
 ## Core Role in the Subsystem
 
@@ -43,6 +38,8 @@ This subsystem participates in the shared Eidonic manifestation law:
 **signal → intent → preview → weave → commit**
 
 Its specific contribution is to hold the `Eidonic VR Studio` layer inside that larger chain without collapsing the rest of the architecture into a single file or a single gesture.
+
+![VR Studio](vr_studio.png)
 
 ---
 
