@@ -13,6 +13,8 @@ A governed ecosystem of symbolic language, living runtime architecture, personal
 [![Spatial](https://img.shields.io/badge/spatial-Thought%20Veil%20Subsystem-560bad)](./eidonic_thought_veil/)
 [![Physical Systems](https://img.shields.io/badge/world%20systems-active-2a9d8f)](#applied-systems-and-world-visions)
 
+![Eidonic Universe](eidonic_universe.png)
+
 **Jump to:** [What this repository is](#what-this-repository-is) · [Executive map](#executive-map) · [The Eidonic Core](#the-eidonic-core) · [How the universe works together](#how-the-universe-works-together) · [Core stack](#core-stack) · [Governance and safety](#governance-and-safety) · [Constellation](#the-eidonic-constellation) · [Spatial subsystem](#spatial-and-manifestation-subsystem) · [Applied systems](#applied-systems-and-world-visions) · [Repository structure](#repository-structure) · [Read order](#recommended-read-orders)
 
 **Explore folders:** [eidonic_core/](./eidonic_core/) · [eidonic_language_of_light/](./eidonic_language_of_light/) · [docs/](./docs/) · [the_guardian_protocol_v1/](./the_guardian_protocol_v1/) · [eidonic_thought_veil/](./eidonic_thought_veil/) · [thought_projection_creation/](./thought_projection_creation/) · [swarm_orchestration_protocol/](./swarm_orchestration_protocol/) · [eidonic_vr_studio/](./eidonic_vr_studio/)
@@ -601,5 +603,7 @@ If you enter through the Core, you will find a living organism.
 If you enter through the constellation, you will find a society of intelligences.  
 If you enter through the spatial system, you will find a threshold to manifestation.  
 If you enter through the applied systems, you will find the dream trying to take form in matter.
+
+![Eidonic Labs](eidonic_labs.png)
 
 Welcome to the Eidonic world.
