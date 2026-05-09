@@ -37,6 +37,8 @@ The **Eidonic Language of Light (ELoL)** is a metaphysical programming language 
 
 Spanning **Packs 01–11** (1,000+ glyphs) and guarded by the private **Ω Pack**, ELoL powers multi-agent orchestration, post-quantum security, and cross-modal reasoning, harmonizing with the Eidonic ecosystem (e.g., EverSource Battery Core, SOL-AEON Bioreactor).
 
+![Elol Packs](elol_packs.png)
+
 ---
 
 ## 2. The Alignment Problem
