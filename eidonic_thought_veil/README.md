@@ -20,12 +20,7 @@ SPDX-License-Identifier: CC-BY-SA-4.0
 
 The Thought Veil is the non-invasive threshold layer of the subsystem. It translates structured human signal into previewable intent, routes that intent through Herald Prime and the governance stack, and only then allows deeper EKRP weaving when confidence and safety thresholds are met.
 
-### What this folder contains
-
-- [`README.md`](./README.md)  
-  This GitHub-facing overview for the subsystem folder.
-- [eidonic_thought_veil.md](./eidonic_thought_veil.md)  
-  The main subsystem scroll.
+![Eidonic Thought Veil](eidonic_thought_veil.png)
 
 ## Core Role in the Subsystem
 
