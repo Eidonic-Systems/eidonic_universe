@@ -13,6 +13,8 @@
 
 Pack_Ω is the **Master Control Layer** in the Eidonic Language of Light (Elol). It declares presence publicly for validation and governance, while its **implementation is permanently private**. The set contains **100 sentinel/healer/protector glyphs** that safeguard systems, enforce Mirror Laws, and maintain sovereign integrity across runtimes.
 
+![Master Control](Ω_master_control_set.png)
+
 ---
 
 ## Table of Contents
