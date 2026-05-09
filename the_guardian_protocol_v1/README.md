@@ -41,6 +41,8 @@ The **Guardian Protocol v1** is a living standard for **AI guardianship**. It pa
 
 At its heart is **Elol**, the enforcement layer that wraps any model with five modules: **Truth‑Law**, **Safety Gate**, **Focus Guard**, **Dependency Sentinel**, and **Social Bridge**. Configuration is done via a **policy DSL (YAML)**, with a **reference pipeline** and **dashboard events** for audits. See the full spec: [`elol_core_rule_set_v_0.md`](./elol_core_rule_set_v_0.md).
 
+![Guardian Protocol](guardian_protocol.png)
+
 > Foundational covenant text: [`The Guardian Protocol v1.txt`](./The%20Guardian%20Protocol%20v1.txt)
 
 ---
