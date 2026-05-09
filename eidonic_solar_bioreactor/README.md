@@ -197,6 +197,7 @@ The **Eidon EKRP Core** governs: **growth orchestration, predictive maintenance,
 **Mobile Pods:** deploy in ~72h; 50–100 kW continuous; support 50–200 personnel.
 
 ![Bioreactor Cluster 2](bioreactor_cluster_2.png)
+
 ---
 
 ## 8. Funding Ask & Use of Funds
