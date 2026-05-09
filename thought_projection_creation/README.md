@@ -20,13 +20,7 @@ SPDX-License-Identifier: CC-BY-SA-4.0
 
 Thought Projection Creation is the umbrella ingress architecture for the subsystem. It defines how voice, text, sketch, gesture, multimodal composition, and future non-invasive neural pathways become legible intent that can move toward preview, weaving, and governed manifestation.
 
-### What this folder contains
-
-- [`README.md`](./README.md)  
-  This GitHub-facing overview for the subsystem folder.
-- [thought_projection_creation.md](./thought_projection_creation.md)  
-  The main subsystem scroll.
-
+![Thought Projection Creation](thought_projection_creation.png)
 ## Core Role in the Subsystem
 
 - Define the ingress ladder from multimodal input to future neural tiers
