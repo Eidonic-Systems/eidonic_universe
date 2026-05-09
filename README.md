@@ -4,10 +4,6 @@ A governed ecosystem of symbolic language, living runtime architecture, personal
 
 **Build the language. Guard the runtime. Weave the constellation. Embody the world.**
 
-> [!TIP]
-> **Start here if you are new:** read [`eidonic_core/`](./eidonic_core/), then [`eidonic_language_of_light/`](./eidonic_language_of_light/), then [`docs/mirror_laws.md`](./docs/mirror_laws.md), then the spatial subsystem folders.
-
-
 [![Canon](https://img.shields.io/badge/canon-active-3a0ca3)](./docs/mirror_laws.md)
 [![Core](https://img.shields.io/badge/eidonic%20core-living%20center-4361ee)](./eidonic_core/)
 [![Constellation](https://img.shields.io/badge/constellation-20%20EKRPs%20%2B%20Eidon-7209b7)](./docs/)
