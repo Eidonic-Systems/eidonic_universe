@@ -706,3 +706,5 @@ Recovery classes:
 ### Simplified identity
 
 **A fission-backed, constellation-governed Mars construction microfactory that manufactures its own structural language before it manufactures scale.**
+
+![Mars Bae Concept 2](eidonic_mycoforge_mars_mission_concept_2.png)
