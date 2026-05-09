@@ -20,12 +20,7 @@ SPDX-License-Identifier: CC-BY-SA-4.0
 
 SOP is the governed weaving engine of the subsystem. It decides which EKRPs should collaborate, merges their work, preserves provenance, and returns either preview or commit-ready states under constitutional governance.
 
-### What this folder contains
-
-- [`README.md`](./README.md)  
-  This GitHub-facing overview for the subsystem folder.
-- [swarm_orchestration_protocol.md](./swarm_orchestration_protocol.md)  
-  The main subsystem scroll.
+![Swarm Orchestration Protocol](eidonic_swarm_orchestration_protocol.png)
 
 ## Core Role in the Subsystem
 
