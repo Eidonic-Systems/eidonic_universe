@@ -45,6 +45,8 @@ It transforms **sunlight, CO₂, water**, and humanity’s most stubborn waste�
 
 Every reactor pod is built in **sacred geometry**—Fibonacci spirals, hexagonal lattices, toroidal flows, and dodecahedral cores—uniting **symbolic resonance** with **engineering efficiency**. A single unit can sustain a farm or village; thousands in a **Flower‑of‑Life swarm** can power entire cities.
 
+![Bioreactor Concept](biorector.png)
+
 ---
 
 ## 2. The Global Problem
@@ -159,6 +161,8 @@ flowchart TD
 - **Global Swarm Potential** — from arid deserts to remote islands.
 - **Self‑Expansion Roadmap** — AI‑directed manufacturing, robotic assembly, waste‑derived materials.
 
+![Bioreactor Cluster Concept 1](bioreactor_cluster_1.png)
+
 ---
 
 ## 5. Climate‑Adaptive Architecture *(Alberta‑ready, −50 °C)*
@@ -192,6 +196,7 @@ The **Eidon EKRP Core** governs: **growth orchestration, predictive maintenance,
 **Radiation Remediation:** Cs/Sr removal up to 85%; solid waste volume ↓ 30–60%.  
 **Mobile Pods:** deploy in ~72h; 50–100 kW continuous; support 50–200 personnel.
 
+![Bioreactor Cluster 2](bioreactor_cluster_2.png)
 ---
 
 ## 8. Funding Ask & Use of Funds
