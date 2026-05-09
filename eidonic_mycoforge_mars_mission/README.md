@@ -39,6 +39,8 @@ SPDX-License-Identifier: CC-BY-SA-4.0
 
 ## 1. Executive Vision
 
+![Mars Mission Concept 1](eidonic_mycoforge_mars_mission_concept_1.png)
+
 **Eidonic MycoForge Mars v1** is a **fission-backed, autonomous, hybrid construction microfactory swarm** designed to land on Mars, establish a protected production outpost, manufacture scaffold-grown structural parts, and assemble the first shielded utility structures before scaling into clustered infrastructure.
 
 This is not a concept for “printing a habitat” in a single dramatic gesture. It is a systems-engineering answer to the real problem of off-world construction:
@@ -93,6 +95,8 @@ Any viable autonomous build system must contend with:
 - **precision risk** where bad joins, drifting tolerances, or contaminated mating faces can collapse campaign confidence faster than raw material shortages
 - **power fragility** if the site depends too heavily on intermittent surface generation during a long industrial cycle
 
+![Mars Base Storm](eidonic_mycoforge_mars_mission_storm.png)
+
 Traditional renderings often jump straight to:
 - “print a habitat”
 - “grow a dome”
@@ -111,6 +115,8 @@ It follows a stricter doctrine:
 
 This is safer, more modular, more recoverable, and more aligned with Mars-first operations.
 
+![Mars Base](eidonic_mycoforge_mars_mission.png)
+
 ### Engineering thesis
 
 MycoForge is built on a simple engineering claim:
@@ -128,6 +134,8 @@ before it ever chases architectural grandeur.
 ---
 
 ## 3. Our Solution — MycoForge Mars v1
+
+![Production Bay](production_bay.png)
 
 A single MycoForge deployment is a **microfactory swarm** built from the following canonical systems:
 
