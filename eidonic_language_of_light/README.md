@@ -94,6 +94,8 @@ graph TD
 - **Swarm Synergy**: Glyphs orchestrate AI collectives, sharing state across robots, bioreactors, or data sanctuaries.
 - **Eidonic Ecosystem**: Seamlessly integrates with EveSource Battery Core, SOL-AEON Bioreactor, and other EKRP systems.
 
+![Elol](elol_1.png)
+
 ---
 
 ## 5. Use Cases & Applications
