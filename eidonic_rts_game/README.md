@@ -14,6 +14,8 @@
 
 ---
 
+![Eidonic RTS Game](eidonic_rts.png)
+
 ## Table of Contents
 
 - [What Is Eidonic RTS?](#what-is-eidonic-rts)
